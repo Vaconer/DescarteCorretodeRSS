@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descarte</title>
+    <link rel="stylesheet" href="../../commonStyle.css">
+    <link rel="stylesheet" href="descarte.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div id="logo">
+            <a href="../../index.html">
+                <img style="height: 70px;" src="../../images/icon/logo-Tecnología-Ambiental-01-copia.png" alt="Logo">
+            </a>
+        </div>
+        <ul class="nav" id="nav">
+            <li class="nav-link"><a href="../../index.html">Home</a></li>
+            <li class="nav-link"><a href="#grupos">Grupos</a></li>
+            <li class="nav-link"><a href="exercicios.html">Exercício de Fixação</a></li>
+        </ul>
+        <div id="barContainer">
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="apresentacao">
+                <h1>Descarte correto dos respectivos grupos</h1><br>
+                <p>Agora que você, enfermeiro ou técnico de enfermagem, aprendeu sobre a classificação e a simbologia de
+                    todos os grupos de resíduos presentes no hospital, vou te ensinar como esses materiais devem ser
+                    descartados, ou seja, segregados corretamente.</p>
+                <div class="play">
+                    <img src="../../images/icon/play.png" alt="play">
+                    <span><a href="https://www.youtube.com/watch?v=83aH8ypnayk" target="_blank">Assistir</a></span>
+                </div>
+            </div>
+            <div class="img-container">
+                <img class="img" src="../../images/extra/Descarte.webp" alt="Descarte">
+            </div>
+        </div>
+
+        <center>
+            <h1>DESCARTE CORRETO - GRUPOS</h1>
+            <h5>Clique nas imagens para mais informações</h5>
+        </center>
+        <div id="grupos" class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide card" data-target="enfermeiro" id="slide-1">
+                    <img class="img-1" src="../../images/extra/grupo-a.jpg" alt="Grupo A">
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide card" data-target="enfermeiro" id="slide-2">
+                    <img class="img-1" src="../../images/extra/grupo-b.png" alt="Grupo B">
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide card" data-target="enfermeiro" id="slide-3">
+                    <img class="img-1" src="../../images/extra/grupo-c.jpg" alt="Grupo C">
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="swiper-slide card" data-target="enfermeiro" id="slide-4">
+                    <img class="img-1" src="../../images/extra/grupo-d1.png" alt="Grupo D">
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="swiper-slide card" data-target="enfermeiro" id="slide-5">
+                    <img class="img-1" src="../../images/extra/grupo-d.jpg" alt="Grupo D">
+                </div>
+
+                <!-- Slide 6 -->
+                <div class="swiper-slide card" data-target="enfermeiro" id="slide-6">
+                    <img class="img-1" src="../../images/extra/grupo-e.jpg" alt="Grupo E">
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </section>
+
+    <div class="enfermeiro" id="enfermeiroImg">
+        <img src="../../images/photoshop/Carlos.png" alt="Carlos">
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="left-col">
+                <img class="footer-logo" src="../../images/icon/logo-footer.png" alt="Logo">
+                <p class="rights-text">Copyright © 2024.</p>
+                <p><img src="../../images/icon/phone.png" alt="Phone"> +55 34 9280-2738</p>
+                <p><img src="../../images/icon/mail.png" alt="Email">&nbsp;silviavitorino2006@yahoo.com.br</p>
+            </div>
+            <div class="right-col">
+                <h1>Bem-vindos</h1>
+                <div class="border"></div>
+                <p>Aqui, aprendam sobre resíduos de saúde de forma lúdica. Contatem-nos para dúvidas. Aproveitem!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="../../script.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+            }
+        });
+
+        $(document).ready(function () {
+            // Scroll suave para links de navegação
+            $('.nav a[href^="#"]').on('click', function (e) {
+                e.preventDefault();
+                var id = $(this).attr('href');
+                var targetOffset = $(id).offset().top;
+
+                $('html, body').animate({
+                    scrollTop: targetOffset - 100
+                }, 500);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.swiper-slide.card'); // Seleciona todos os slides
+            const enfermeiroImg = document.getElementById('enfermeiroImg');
+            const container = document.querySelector('section');
+
+            // Função para ler em voz alta
+            function lerTexto(texto) {
+                if ('speechSynthesis' in window) {
+                    var utterance = new SpeechSynthesisUtterance(texto);
+                    speechSynthesis.speak(utterance);
+                } else {
+                    console.error('Este navegador não suporta a síntese de voz.');
+                }
+            }
+
+            slides.forEach(function (slide) {
+                slide.addEventListener('click', function () {
+                    slides.forEach(function (s) {
+                        s.classList.remove('active');
+                    });
+                    slide.classList.add('active');
+
+                    const textoSlide = document.createElement('div');
+                    textoSlide.classList.add('apresentacao');
+
+                    let imgSrc = 'Carlos.png'; // Define a imagem do enfermeiro
+                    let categoria = ''; 
+                    let texto = ''; 
+
+                    switch (slide.id) {
+                        case 'slide-1':
+                            categoria = 'Grupo A: Resíduos Potencialmente Infectantes';
+                            texto = 'Os resíduos do grupo A, devem ser descartados dentro de sacos plásticos brancos leitosos ou vermelhos, que ficam dentro de lixeiras brancas, de acordo com o Art.11 à 24 da RDC 222/2018.';
+                            break;
+                        case 'slide-2':
+                            categoria = 'Grupo B: Substâncias Químicas de Risco';
+                            texto = 'Os resíduos do grupo B, devem ser descartados dentro de sacos Laranjas, que são despejados em bombonas azuis, com material resistente, conforme os artigos 56 à 71 da RDC 222/2018';
+                            break;
+                        case 'slide-3':
+                            categoria = 'Grupo C: Rejeitos Radioativos ou Contaminados';
+                            texto = 'Os resíduos do grupo C, devem ser descartados em sacos roxos e depois serão depositados em tambores de metal (com o símbolo de radioativo), conforme artigos 72 à 79 da RDC 222/2018.';
+                            break;
+                        case 'slide-4':
+                            categoria = 'Grupo D Comum: Resíduos Comuns';
+                            texto = 'Os resíduos do grupo D Reciclável, devem ser descartados em sacos plásticos azuis, que ficam dentro de lixeiras, sendo a lixeira vermelha para o plástico, azul para o papel, verde para o vidro e amarela para o metal, conforme artigos 80 à 85 da RDC 222/2018.';
+                            break;
+                        case 'slide-5':
+                            categoria = 'Grupo D Reciclável: Resíduos Recicláveis';
+                            texto = 'Os resíduos do grupo D reciclável devem ser descartados em sacos azuis dentro de lixeiras coloridas: vermelha para plástico, azul para papel, verde para vidro, marrom para orgânico e amarela para metal, conforme a RDC nº 222 da Anvisa.';
+                            break;
+                        case 'slide-6':
+                            categoria = 'Grupo E: Materiais Perfurocortantes';
+                            texto = 'Os resíduos do grupo E perfurocortante, devem ser descartados em caixas Descapark, conforme artigos 86 à 89 da RDC 222/2018.';
+                            break;
+                    }
+
+                    let textoCompleto = categoria + ". " + texto;
+
+                    textoSlide.innerHTML = `
+                        <h3>${categoria}</h3>
+                        <br>
+                        <p>${texto}</p>
+                    `;
+
+                    lerTexto(textoCompleto);
+
+                    enfermeiroImg.innerHTML = `<img src="${imgSrc}" alt="Imagem do enfermeiro">`;
+                    enfermeiroImg.appendChild(textoSlide);
+
+                    textoSlide.style.position = 'absolute';
+                    textoSlide.style.top = '80%';
+                    textoSlide.style.left = '60%';
+                    textoSlide.style.transform = 'translate(-50%, -50%)';
+
+                    enfermeiroImg.style.display = 'block';
+                    container.style.filter = 'blur(5px)';
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            enfermeiroImg.addEventListener('click', function () {
+                enfermeiroImg.style.display = 'none';
+                container.style.filter = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+    </script>
+</body>
+</html>

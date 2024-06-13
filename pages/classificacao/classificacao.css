@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--darkblue);
+    color: var(--white);
+}
+
+/* Header */
+header {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 1em;
+    margin-bottom: 80px;
+}
+
+#barContainer {
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav {
+    list-style-type: none;
+    color: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--lightDark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 0;
+    overflow: hidden;
+    transition: all .6s ease-in-out;
+    z-index: 2;
+}
+
+.showNav {
+    padding: 1em;
+    height: 250px; /* Definindo a altura para 300px */
+    width: 100%;
+    max-width: 100%; /* Definindo a largura máxima para 100% */
+    background-color: green; /* Fundo verde quando as opções estão visíveis em telas de celular */
+    color: white;
+    padding-top: 40px;
+}
+
+/* Mover o botão de fechar para cima */
+#barContainer {
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: fixed;
+    top: 1; /* Colocar o botão no topo da tela */
+    right: 1em; /* Ajustar a posição à direita */
+    z-index: 3; /* Garantir que o botão esteja acima da barra verde */
+    color: red;
+}
+
+
+.navLogo {
+    margin-bottom: 3rem;
+}
+
+.nav-link {
+    font-size: 1rem;
+    width: 100%;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.nav-link a {
+    color: var(--white);
+}
+
+.sociallinkContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.sociallink {
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+    .nav {
+        position: relative;
+        width: auto;
+        background-color: transparent;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5%;
+    }
+
+    .nav-link {
+        margin-right: 2em;
+    }
+
+    .navLogo, #barContainer, .sociallinkContainer {
+        display: none;
+    }
+}
+
+/*Section 1*/ 
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 150px;
+}
+
+.apresentacao {
+    margin-right: 50px; 
+    margin-bottom: 50px;
+    text-align: justify;
+}
+
+.img-1, .img {
+    max-width: 250px;
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+.img{
+    max-width: 400px;
+    height: 300px;
+}
+
+.enfermeira {
+    display: none; /* Inicialmente oculta */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999; /* Garante que fique acima de tudo */
+}
+
+.enfermeira img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+h5 {
+    color: #0009;
+	line-height: 20px;
+}
+
+.play {
+	margin-top: 20px;
+	display: flex;
+	/* justify-content: center; */
+	align-items: center;
+}
+.play img {
+	width: 45px;
+	cursor: pointer;
+	filter: drop-shadow(0 0 10px #0002);
+}
+.play span a{
+	margin-left: 10px;
+	font-size: 20px;
+	font-weight: 900;
+	color: rgba(0, 0, 0, 0.8);
+	cursor: pointer;
+}
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.swiper-container {
+    position: relative;
+    width: 100%;
+    margin-top: 50px; /* Reduzi o espaço superior */
+}
+
+.swiper-slide {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden; /* Para garantir que a borda arredondada seja aplicada */
+}
+
+.swiper-slide:hover {
+    transform: scale(1.05); /* Aumenta um pouco ao passar o mouse */
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 20px; /* Posicionamento da paginação */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    z-index: 100; /* Garante que a paginação esteja acima dos slides */
+}
+
+.swiper-pagination-bullet {
+    background-color: rgba(255, 255, 255, 0.5); /* Cor da bala da paginação */
+    width: 10px; /* Tamanho da bala */
+    height: 10px;
+    margin: 0 5px; /* Espaçamento entre as balas */
+    border-radius: 50%; /* Transforma a bala em um círculo */
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #1F8772; /* Cor da bala ativa */
+}
+
+/* Estilização dos slides */
+#slide-1,
+#slide-2,
+#slide-3,
+#slide-4,
+#slide-5,
+#slide-6 {
+    background-size: cover;
+    background-position: center;
+}
+
+#Grupo-a-h1 {
+    text-align: start;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+    border: 1px solid #e0e0e0;
+}
+
+main h2, main h3 {
+    color: #1d6e6a;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+main form p {
+    font-size: 16px;
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #202124;
+}
+
+main form input[type="radio"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+main form button {
+    display: block;
+    width: 100%;
+    background-color: rgb(29, 174, 106);
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+main form button:hover {
+    background-color: #14894d;
+}
+
+.question {
+    padding: 20px;
+    margin: 10px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+#results {
+    margin-top: 20px;
+    display: none;
+}
+
+#results h3 {
+    text-align: left;
+    color: #1d6e6a;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+#results p {
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#results p.green {
+    background-color: #e6f4ea;
+    color: #188038;
+}
+
+#results p.red {
+    background-color: #fce8e6;
+    color: #d93025;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 15px;
+        margin: 15px;
+    }
+
+    main form p {
+        font-size: 14px;
+    }
+
+    main form button {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    #results p {
+        font-size: 14px;
+    }
+}
+
+
+/* Responsive footer */
+footer {
+    color: #E5E8EF;
+    background: #000D;
+    padding: 50px 0;
+    margin-top: 100px;
+}
+
+footer .footer-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+footer .right-col h1 {
+    font-size: 26px;
+}
+
+footer .border {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, rgb(15, 173, 15), rgb(29, 174, 106));
+    margin: 2px;
+}
+
+footer .txtb {
+    flex: 1;
+    padding: 18px 40px;
+    font-size: 16px;
+    background: #343A40;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    border-radius: 5px;
+    min-width: 260px;
+    margin-top: 20px;
+    color: white;
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre nós</title>
+    <link rel="stylesheet" href="../../commonStyle.css">
+    <link rel="stylesheet" href="about.css">
+    <script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Função para adicionar a classe .show quando a seção estiver na tela
+            function showOnScroll() {
+                var sections = document.querySelectorAll('.gridSection, .teamSection');
+
+                sections.forEach(function (section) {
+                    var position = section.getBoundingClientRect();
+
+                    // Verifica se a seção está visível na tela
+                    if (position.top < window.innerHeight && position.bottom >= 0) {
+                        section.classList.add('show');
+                    } else {
+                        section.classList.remove('show');
+                    }
+                });
+            }
+
+            // Adiciona o evento de rolagem para chamar a função showOnScroll
+            window.addEventListener('scroll', showOnScroll);
+
+            // Chama a função showOnScroll quando a página é carregada
+            showOnScroll();
+        });
+
+    </script>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div id="logo">
+            <a href="../../index.html">
+                <img style="height: 70px;" src="../../images/icon/logo-Tecnología-Ambiental-01-copia.png" alt="">
+            </a>
+        </div>
+        <ul class="nav" id="nav">
+            <li class="nav-link"><a href="../../index.html">Home</a></li>
+            <li class="nav-link"><a href="aboutus.html">Sobre nós</a></li>
+        </ul>
+        <div id="barContainer">
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- aboutus hero  -->
+    <section class="gridSection">
+        <div class="sectionDesc aboutusDesc">
+            <h1 class="headline">
+                Sobre nós
+            </h1>
+            <p class="sub-headline">
+                Esta página apresenta o produto final de uma pesquisa de Doutorado em Tecnologia Ambiental,
+                realizada por Sílvia Maria Aparecida Vitorino, sob orientação da professora Drª. Juliana
+                Chiaretti Novi. O objetivo foi criar um conteúdo educativo e um jogo gamificado, para ensinar
+                a segregação de Resíduos de Serviços de Saúde (RSS), como ferramenta educacional, para o
+                gerenciamento desse material. <br><br>
+            </p>
+
+            <p class="sub-headline">
+                A ferramenta contempla o conceito de RSS, classificação e simbologia desses resíduos, além de uma breve
+                explicação sobre o Plano de Gerenciamento de Resíduos de Serviço de Saúde (PGRSS). Inclui conceitos,
+                vídeos explicativos, exercícios interativos, sugestões para leitura da legislação atual, com links e, um
+                jogo para revisar os grupos de resíduos de forma prática e lúdica, para profissionais de enfermagem. O
+                material visa aprimorar a aprendizagem e a atuação desses profissionais nos serviços de saúde.
+            </p>
+        </div>
+        <div class="sectionPic bouncepic aboutusPic" id="sectionPic">
+            <img src="../../images/extra/Sobre nos.jpg" alt="">
+        </div>
+    </section>
+
+    <!-- Carousel -->
+    <section class="teamSection">
+        <h1 class="sectionHeader">Nossa equipe do projeto</h1>
+        <div class="carouselContainer">
+            <div class="eachCarousel eachTeam">
+                <div class="teamPic">
+                    <img src="../../images/extra/3-x-4-Sílvia_1.jpg" alt="">
+                </div>
+                <div class="teamDesc">
+                    <h1 class="teamName">Sílvia Maria Aparecida Vitorino</h1>
+                    <p class="position">Doutoranda</p>
+                    <a class="letters" href="http://lattes.cnpq.br/1959266175363454">Latters</a>
+                </div>
+
+            </div>
+
+            <div class="eachCarousel eachTeam">
+                <div class="teamPic">
+                    <img src="../../images/extra/Juliana.jpg" alt="">
+                </div>
+                <div class="teamDesc">
+                    <h1 class="teamName">Juliana Chiaretti Novi</h1>
+                    <p class="position">Orientadora</p>
+                    <a class="letters" href="http://lattes.cnpq.br/1055863972655077">latters</a>
+                </div>
+            </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="left-col">
+                <div class="logo"></div><br><br>
+                <p class="rights-text">Copyright © 2024.</p><br>
+                <p><img src="../../images/icon/phone.png"> +55 34 9280-2738<br><img
+                        src="../../images/icon/mail.png">&nbsp; silviavitorino2006@yahoo.com.br</p>
+            </div>
+            <div class="right-col">
+                <h1 style="color: #fff">Bem-vindos</h1>
+                <div class="border"></div><br>
+                <p> Aqui, aprendam sobre resíduos de saúde de forma lúdica. Contatem-nos para dúvidas. Aproveitem!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

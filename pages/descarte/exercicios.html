@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios - Classificação de RSS </title>
+    <link rel="stylesheet" href="../../commonStyle.css">
+    <link rel="stylesheet" href="descarte.css">
+    <link rel="stylesheet" href="../../script.js">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
+    <!-- Estilos do Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div id="logo">
+            <a href="../../index.html">
+                <img style="height: 70px;" src="../../images/icon/logo-Tecnología-Ambiental-01-copia.png" alt="">
+            </a>
+        </div>
+        <ul class="nav" id="nav">
+            <li class="nav-link"><a href="../../index.html">Home</a></li>
+            <li class="nav-link"><a href="descarte.html">Material de apoio</a></li>
+            <li class="nav-link"><a href="exercicios.html">Exercício de Fixação</a></li>
+        </ul>
+        <div id="barContainer">
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2>Vamos treinar e fixar o conteúdo?</h2>
+            <form id="quizForm">
+                <div class="question">
+                    <p>Com base no descarte corretos dos resíduos de serviços de saúde, avalie as afirmativas abaixo em (V) verdadeiras ou (F) falsas:</p>
+                    <p>   (  ) Os sacos para acondicionamentos de resíduos infectantes do grupo A, devem ser brancos e leitosos.<p>
+                    <p>   (  ) Materiais orgânicos, como restos de comida, devem ser descartados em sacos na cor rosa, por serem classificados como resíduos do grupo C.</p>  
+                    <p>   (  ) Os resíduos perfurocortantes, classificados no grupo E, podem cortar e provocar acidentes de trabalho e, devem ser descartados em caixas Descapark.</p>
+                    <h4>Exercício de Fixação</h4> <br>
+                    <p>Com base no descarte correto dos resíduos de serviços de saúde, avalie as afirmativas abaixo em (V) verdadeiras ou (F) falsas:</p>
+                    <p><input type="radio" name="q1" value="A"> A) V – V - F.</p>
+                    <p><input type="radio" name="q1" value="B"> B) V – F – V.</p>
+                    <p><input type="radio" name="q1" value="C"> C) F – V – F.</p>
+                </div>
+
+                <button type="button" onclick="checkAnswers()">Enviar Respostas</button>
+            </form>
+
+            <div id="results">
+                <h3>Resultados</h3>
+                <p id="result1"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="left-col">
+                <img class="footer-logo" src="../../images/icon/logo-footer.png" alt="">
+                <p class="rights-text">Copyright © 2024.</p>
+                <p><img src="../../images/icon/phone.png"> +55 34 9280-2738</p>
+                <p><img src="../../images/icon/mail.png">&nbsp;silviavitorino2006@yahoo.com.br</p>
+            </div>
+            <div class="right-col">
+                <h1>Bem-vindos</h1>
+                <div class="border"></div>
+                <p>Aqui, aprendam sobre resíduos de saúde de forma lúdica. Contatem-nos para dúvidas. Aproveitem!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        function checkAnswers() {
+            var correctAnswer = 'B';
+
+            var userAnswer = document.querySelector('input[name="q1"]:checked')?.value;
+
+            var result1 = document.getElementById('result1');
+
+            if (userAnswer === correctAnswer) {
+                result1.textContent = 'Questão: Correta';
+                result1.style.color = 'green';
+            } else {
+                result1.textContent = 'Questão: Errada. A resposta correta é B.';
+                result1.style.color = 'red';
+            }
+
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>

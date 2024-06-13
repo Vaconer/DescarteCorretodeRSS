@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classificação</title>
+    <link rel="stylesheet" href="../../commonStyle.css">
+    <link rel="stylesheet" href="classificacao.css">
+    <link rel="stylesheet" href="../../script.js">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
+    <!-- Estilos do Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js?key=YOUR_KEY"></script>
+
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div id="logo">
+            <a href="../../index.html">
+                <img style="height: 70px;" src="../../images/icon/logo-Tecnología-Ambiental-01-copia.png" alt="">
+            </a>
+        </div>
+        <ul class="nav" id="nav">
+            <li class="nav-link"><a href="../../index.html">Home</a></li>
+            <li class="nav-link"><a href="#grupos">Grupos</a></li>
+            <li class="nav-link"><a href="exercicios1.html">Exercício de Fixação</a></li>
+        </ul>
+        <div id="barContainer">
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="apresentacao">
+                <h1>Classificação e Simbologia dos Resíduos de Serviços de Saúde (RSS)</h1>
+                <p>A classificação dos Resíduos de Serviços de Saúde pela Anvisa é crucial para garantir um manejo
+                    seguro, protegendo a saúde pública e o meio ambiente, categorizando os resíduos conforme seu risco
+                    para facilitar identificação e tratamento adequado.</p>
+                <div class="play">
+                    <img src="../../images/icon/play.png" alt="play">
+                    <span><a href="https://www.youtube.com/watch?v=Q999Irrwpuk" target="_blank">Assistir</a></span>
+                </div>
+            </div>
+            <div class="img-container">
+                <img class="img" src="../../images/extra/classicacao-1.jpg" alt="">
+            </div>
+        </div>
+
+        <center>
+            <h1>CLASSIFICAÇÃO E SIMBOLOGIA - GRUPOS</h1>
+            <h5>Clique nas imagens para mais informações</h5>
+        </center>
+        <div id="grupos" class="swiper-container">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide card" data-target="enfermeira" id="slide-1">
+                    <img class="img-1" src="../../images/extra/grupo-a.jpg" alt="">
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="swiper-slide card" data-target="enfermeira" id="slide-2">
+                    <img class="img-1" src="../../images/extra/grupo-b.png" alt="">
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="swiper-slide card" data-target="enfermeira" id="slide-3">
+                    <img class="img-1" src="../../images/extra/grupo-c.jpg" alt="">
+                </div>
+
+                <!-- Slide 4 -->
+                <div class="swiper-slide card" data-target="enfermeira" id="slide-4">
+                    <img class="img-1" src="../../images/extra/grupo-d1.png" alt="">
+                </div>
+
+                <!-- Slide 5 -->
+                <div class="swiper-slide card" data-target="enfermeira" id="slide-5">
+                    <img class="img-1" src="../../images/extra/grupo-d.jpg" alt="">
+                </div>
+
+                <!-- Slide 6 -->
+                <div class="swiper-slide card" data-target="enfermeira" id="slide-6">
+                    <img class="img-1" src="../../images/extra/grupo-e.jpg" alt="">
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+        </div>
+
+    </section>
+
+    <div class="enfermeira" id="enfermeiraImg">
+        <img src="../../images/photoshop/marina.png" alt="">
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="left-col">
+                <img class="footer-logo" src="../../images/icon/logo-footer.png" alt="">
+                <p class="rights-text">Copyright © 2024.</p>
+                <p><img src="../../images/icon/phone.png"> +55 34 9280-2738</p>
+                <p><img src="../../images/icon/mail.png">&nbsp;silviavitorino2006@yahoo.com.br</p>
+            </div>
+            <div class="right-col">
+                <h1>Bem-vindos</h1>
+                <div class="border"></div>
+                <p>Aqui, aprendam sobre resíduos de saúde de forma lúdica. Contatem-nos para dúvidas. Aproveitem!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 40,
+                },
+            }
+        });
+
+        $(document).ready(function () {
+            // Scroll suave para links de navegação
+            $('.nav a[href^="#"]').on('click', function (e) {
+                e.preventDefault();
+                var id = $(this).attr('href');
+                var targetOffset = $(id).offset().top;
+
+                $('html, body').animate({
+                    scrollTop: targetOffset - 100
+                }, 500);
+            });
+
+            // Checa se a imagem de parabéns já foi exibida nesta sessão
+            if (!sessionStorage.getItem('parabensShown')) {
+                var parabensImg = $('<img>', {
+                    src: 'images/photoshop/Carlos.png',
+                    alt: '',
+                    class: 'parabens-img'
+                });
+                var parabensText1 = 'Olá, eu sou o Carlos, enfermeiro e, vim aqui explicar para vocês, que também são enfermeiros e técnicos de enfermagem, sobre os resíduos de serviços de saúde.';
+                var parabensText2 = 'Resíduos de serviços de saúde são resíduos gerados em hospitais, farmácias, funerárias, clínicas veterinárias, unidades móveis de atendimento, salões de beleza e estética.';
+                var parabensText3 = 'Mas, aqui para nós, vamos aprender sobre aqueles gerados nas unidades hospitalares.';
+                var parabensText4 = 'Sua destinação de forma inadequada pode apresentar sérios riscos à saúde da população, dos trabalhadores e pacientes de hospitais e ainda ser danoso ao meio ambiente.';
+                var parabensText5 = 'Então, venha comigo. Vamos aprender mais sobre esse assunto.';
+                var clickToContinueText = 'Clique para continuar';
+                var parabensText = $('<div>', {
+                    class: 'parabens-text',
+                    text: clickToContinueText
+                });
+                var overlay = $('<div>', {
+                    class: 'overlay'
+                });
+                $('body').append(parabensImg);
+                $('body').append(parabensText);
+                $('body').append(overlay);
+
+                function changeText() {
+                    var currentText = $('.parabens-text').text();
+                    if (currentText === clickToContinueText) {
+                        $('.parabens-text').text(parabensText1);
+                        speakText(parabensText1);
+                    } else if (currentText === parabensText1) {
+                        $('.parabens-text').text(parabensText2);
+                        speakText(parabensText2);
+                    } else if (currentText === parabensText2) {
+                        $('.parabens-text').text(parabensText3);
+                        speakText(parabensText3);
+                    } else if (currentText === parabensText3) {
+                        $('.parabens-text').text(parabensText4);
+                        speakText(parabensText4);
+                    } else if (currentText === parabensText4) {
+                        $('.parabens-text').text(parabensText5);
+                        speakText(parabensText5);
+                    } else {
+                        $('.parabens-text, .parabens-img, .overlay').fadeOut(function () {
+                            $('body').removeClass('no-scroll');
+                            $('body > :not(.parabens-img, .parabens-text, .overlay)').removeClass('blurred');
+                            $('.parabens-img, .parabens-text, .overlay').remove();
+                        });
+                    }
+                }
+
+                function speakText(text) {
+                    var speech = new SpeechSynthesisUtterance(text);
+                    speech.lang = 'pt-BR';
+                    speech.pitch = 1;
+                    speech.rate = 1;
+
+                    var voices = window.speechSynthesis.getVoices();
+                    var femaleVoice = voices.find(voice => voice.lang === 'pt-BR' && voice.name.includes('feminina'));
+
+                    if (!femaleVoice) {
+                        femaleVoice = voices.find(voice => voice.lang === 'pt-BR' && (voice.gender === 'female' || voice.name.includes('female')));
+                    }
+
+                    if (femaleVoice) {
+                        speech.voice = femaleVoice;
+                    }
+
+                    window.speechSynthesis.speak(speech);
+                }
+
+                $(document).on('click', function () {
+                    changeText();
+                });
+
+                setTimeout(function () {
+                    $('body > :not(.parabens-img, .parabens-text, .overlay)').addClass('blurred');
+                    overlay.fadeIn();
+                    $('body').addClass('no-scroll');
+                }, 500);
+
+                sessionStorage.setItem('parabensShown', 'true');
+            }
+
+            $(window).on('unload', function () {
+                $('nav').removeClass('black');
+                $('.side-menu').removeClass('active');
+                $('.parabens-img, .parabens-text, .overlay').remove();
+                $('body > :not(.parabens-img, .parabens-text, .overlay)').removeClass('blurred');
+                $('body').removeClass('no-scroll');
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.swiper-slide.card');
+            const enfermeiraImg = document.getElementById('enfermeiraImg');
+            const container = document.querySelector('section');
+
+            function mapearIcone(categoria) {
+                switch (categoria) {
+                    case 'Grupo A: Resíduos Potencialmente Infectantes':
+                        return '';
+                    case 'Grupo B: Substâncias Químicas de Risco':
+                        return '';
+                    case 'Grupo C: Rejeitos Radioativos ou Contaminados':
+                        return '';
+                    case 'Grupo D Comum: Resíduos Comuns':
+                        return '';
+                    case 'Grupo D Reciclável: Resíduos Recicláveis':
+                        return '';
+                    case 'Grupo E: Materiais Perfurocortantes':
+                        return '';
+                    default:
+                        return '';
+                }
+            }
+
+            slides.forEach(function (slide) {
+                slide.addEventListener('click', function () {
+                    slides.forEach(function (s) {
+                        s.classList.remove('active');
+                    });
+
+                    slide.classList.add('active');
+
+                    const textoSlide = document.createElement('div');
+                    textoSlide.classList.add('apresentacao');
+
+                    let imgSrc = '../../images/photoshop/marina.png';
+                    let categoria = '';
+
+                    switch (slide.id) {
+                        case 'slide-1':
+                            categoria = 'Grupo A: Resíduos Potencialmente Infectantes';
+                            textoSlide.innerHTML = `
+                <h3 id="Grupo-a-h1">${categoria}</h3> <br>
+                <ul class="lista-itens">
+                    <li>${mapearIcone(categoria)} Amostras de laboratório com sangue</li>
+                    <li>${mapearIcone(categoria)} Vacinas vencidas</li>
+                    <li>${mapearIcone(categoria)} Peças anatômicas</li>
+                </ul>`;
+                            break;
+                        case 'slide-2':
+                            categoria = 'Grupo B: Substâncias Químicas de Risco';
+                            textoSlide.innerHTML = `
+                <h3>${categoria}</h3> <br>
+                <ul class="lista-itens">
+                    <li>${mapearIcone(categoria)} Medicamentos</li>
+                    <li>${mapearIcone(categoria)} Desinfetantes</li>
+                    <li>${mapearIcone(categoria)} Saneantes</li>
+                </ul>`;
+                            break;
+                        case 'slide-3':
+                            categoria = 'Grupo C: Rejeitos Radioativos ou Contaminados';
+                            textoSlide.innerHTML = `
+                <h3>${categoria}</h3> <br>
+                <ul class="lista-itens">
+                    <li>${mapearIcone(categoria)} Proveniente do Serviço de medicina nuclear e radioterapia</li>
+                    <li>${mapearIcone(categoria)} Provenientes de laboratório e análises clínicas</li>
+                </ul>`;
+                            break;
+                        case 'slide-4':
+                            categoria = 'Grupo D Comum: Resíduos Comuns';
+                            textoSlide.innerHTML = `
+                <h3>${categoria}</h3> <br>
+                <ul class="lista-itens">
+                    <li>${mapearIcone(categoria)} Resíduos orgânicos (restos de comida)</li>
+                    <li>${mapearIcone(categoria)} Podas de árvores e jardins</li>
+                </ul>`;
+                            break;
+                        case 'slide-5':
+                            categoria = 'Grupo D Reciclável: Resíduos Recicláveis';
+                            textoSlide.innerHTML = `
+                <h3>${categoria}</h3> <br>
+                <ul class="lista-itens">
+                    <li>${mapearIcone(categoria)} Papel, plástico, vidro e metal</li>
+                </ul>`;
+                            break;
+                        case 'slide-6':
+                            categoria = 'Grupo E: Materiais Perfurocortantes';
+                            textoSlide.innerHTML = `
+                <h3>${categoria}</h3> <br>
+                <ul class="lista-itens">
+                    <li>${mapearIcone(categoria)} Agulhas e âmpolas de vidro</li>
+                    <li>${mapearIcone(categoria)} Escalpes</li>
+                    <li>${mapearIcone(categoria)} Lâminas de bisturi</li>
+                    <li>${mapearIcone(categoria)} Tubos capilares</li>
+                </ul>`;
+                            break;
+                    }
+
+                    enfermeiraImg.innerHTML = `<img src="${imgSrc}" alt="Imagem da enfermeira">`;
+                    enfermeiraImg.appendChild(textoSlide);
+
+                    textoSlide.style.position = 'absolute';
+                    textoSlide.style.top = '80%';
+                    textoSlide.style.left = '50%';
+                    textoSlide.style.transform = 'translate(-50%, -50%)';
+
+                    enfermeiraImg.style.display = (slide.getAttribute('data-target') === 'enfermeira') ? 'block' : 'none';
+                    container.style.filter = (slide.getAttribute('data-target') === 'enfermeira') ? 'blur(5px)' : 'none';
+                    container.style.transition = (slide.getAttribute('data-target') === 'enfermeira') ? 'filter 0.5s ease' : 'none';
+                    document.body.style.overflow = (slide.getAttribute('data-target') === 'enfermeira') ? 'hidden' : 'auto';
+
+                    speakText(textoSlide.innerText);
+                });
+            });
+
+            function speakText(text) {
+                if ("speechSynthesis" in window) {
+                    var speech = new SpeechSynthesisUtterance(text);
+                    speech.lang = 'pt-BR';
+                    speech.pitch = 1;
+                    speech.rate = 1;
+
+                    setTimeout(() => {
+                        var voices = window.speechSynthesis.getVoices();
+                        var femaleVoice = voices.find(voice => voice.lang === 'pt-BR' && (voice.gender === 'female' || voice.name.toLowerCase().includes('female')));
+
+                        if (femaleVoice) {
+                            speech.voice = femaleVoice;
+                        } else {
+                            console.warn('Nenhuma voz feminina encontrada, usando a voz padrão.');
+                        }
+
+                        window.speechSynthesis.speak(speech);
+                    }, 1000); // Atraso de 1 segundo para garantir que as vozes sejam carregadas
+                } else {
+                    console.log("API NAO DISPONIVEL");
+                }
+            }
+
+
+            enfermeiraImg.addEventListener('click', function () {
+                enfermeiraImg.style.display = 'none';
+                container.style.filter = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>

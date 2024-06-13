@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--darkblue);
+    color: var(--white);
+}
+
+/* Header */
+header {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em 1em;
+    margin-bottom: 80px;
+}
+
+#barContainer {
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav {
+    list-style-type: none;
+    color: var(--white);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--lightDark);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 0;
+    overflow: hidden;
+    transition: all .6s ease-in-out;
+    z-index: 2;
+}
+
+.showNav {
+    padding: 1em;
+    height: 250px; /* Definindo a altura para 300px */
+    width: 100%;
+    max-width: 100%; /* Definindo a largura máxima para 100% */
+    background-color: green; /* Fundo verde quando as opções estão visíveis em telas de celular */
+    color: white;
+    padding-top: 40px;
+}
+
+/* Mover o botão de fechar para cima */
+#barContainer {
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: fixed;
+    top: 1; /* Colocar o botão no topo da tela */
+    right: 1em; /* Ajustar a posição à direita */
+    z-index: 3; /* Garantir que o botão esteja acima da barra verde */
+    color: red;
+}
+
+
+.navLogo {
+    margin-bottom: 3rem;
+}
+
+.nav-link {
+    font-size: 1rem;
+    width: 100%;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.nav-link a {
+    color: var(--white);
+}
+
+.sociallinkContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.sociallink {
+    margin-right: 1em;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+    .nav {
+        position: relative;
+        width: auto;
+        background-color: transparent;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-right: 5%;
+    }
+
+    .nav-link {
+        margin-right: 2em;
+    }
+
+    .navLogo, #barContainer, .sociallinkContainer {
+        display: none;
+    }
+}
+
+/* Estilos para a seção de jogos */
+.jogo-section {
+    padding: 50px 0; /* Espaçamento interno superior e inferior */
+    background-color: #f9f9f9; /* Cor de fundo */
+}
+
+.container {
+    display: flex; /* Faz com que os elementos dentro da container se comportem como flex items */
+    justify-content: space-between; /* Alinha os elementos à esquerda e à direita */
+    max-width: 1200px; /* Largura máxima da container */
+    margin: 0 auto; /* Centraliza a container na página */
+}
+
+.grupos-info {
+    flex-basis: 30%; /* Define a largura da seção de informações dos grupos */
+}
+
+.grupos-info h1 {
+    font-size: 24px; /* Tamanho da fonte para o título dos grupos */
+    margin-bottom: 20px; /* Espaçamento inferior para o título */
+}
+
+.grupos-info ul {
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o preenchimento padrão da lista */
+    margin: 0; /* Remove as margens padrão da lista */
+}
+
+.grupos-info ul li {
+    margin-bottom: 10px; /* Espaçamento inferior entre os itens da lista */
+}
+
+.grupos-info ul li a {
+    color: #333; /* Cor do texto dos links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-size: 16px; /* Tamanho da fonte dos links */
+    display: block; /* Transforma os links em blocos para ocupar toda a largura do contêiner */
+    padding: 10px; /* Adiciona preenchimento ao redor do texto do link */
+    border-radius: 5px; /* Adiciona borda arredondada aos links */
+    transition: background-color 0.3s ease; /* Adiciona transição suave para a mudança de cor de fundo */
+}
+
+.grupos-info ul li a:hover {
+    background-color: #f0f0f0; /* Altera a cor de fundo ao passar o mouse sobre os links */
+}
+
+.grupos-info ul li a.active {
+    background-color: #4caf50; /* Cor de fundo verde para o item selecionado */
+    color: #fff; /* Cor do texto do item selecionado */
+}
+
+.jogo-content {
+    flex-basis: 65%; /* Define a largura da seção de conteúdo do jogo */
+    background-color: #fff; /* Cor de fundo */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Borda arredondada */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.jogo-content h2 {
+    font-size: 24px; /* Tamanho da fonte para o título do jogo */
+    margin-bottom: 15px; /* Espaçamento inferior para o título */
+}
+
+.jogo-content p {
+    font-size: 16px; /* Tamanho da fonte para o texto */
+    color: #666; /* Cor do texto */
+    line-height: 1.6; /* Altura da linha */
+}
+
+/* Estilos para o jogo */
+#game {
+    text-align: center;
+}
+
+.item {
+    display: inline-block;
+    margin: 20px;
+}
+
+#trash-cans {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+#trash-cans div {
+    text-align: center;
+}
+
+
+#trash-can img {
+    display: block;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    #game {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .item {
+        margin: 10px;
+    }
+}
+
+
+
+
+/* Responsive footer */
+footer {
+    color: #E5E8EF;
+    background: #000D;
+    padding: 50px 0;
+    margin-top: 100px;
+}
+
+footer .footer-container {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+footer .right-col h1 {
+    font-size: 26px;
+}
+
+footer .border {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(to right, rgb(15, 173, 15), rgb(29, 174, 106));
+    margin: 2px;
+}
+
+footer .txtb {
+    flex: 1;
+    padding: 18px 40px;
+    font-size: 16px;
+    background: #343A40;
+    border: none;
+    font-weight: 700;
+    outline: none;
+    border-radius: 5px;
+    min-width: 260px;
+    margin-top: 20px;
+    color: white;
+}

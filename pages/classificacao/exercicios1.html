@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicios - Classificação de RSS </title>
+    <link rel="stylesheet" href="../../commonStyle.css">
+    <link rel="stylesheet" href="classificacao.css">
+    <link rel="stylesheet" href="../../script.js">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
+    <!-- Estilos do Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div id="logo">
+            <a href="../../index.html">
+                <img style="height: 70px;" src="../../images/icon/logo-Tecnología-Ambiental-01-copia.png" alt="">
+            </a>
+        </div>
+        <ul class="nav" id="nav">
+            <li class="nav-link"><a href="../../index.html">Home</a></li>
+            <li class="nav-link"><a href="classificacao.html">Material de apoio</a></li>
+            <li class="nav-link"><a href="exercicios1.html">Exercício de Fixação</a></li>
+        </ul>
+        <div id="barContainer">
+            <i id="bar" class="fa-solid fa-bars"></i>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h2>Vamos treinar e fixar o conteúdo?</h2>
+            <form id="quizForm">
+                <div class="question">
+                    <h4>1. Sobre a classificação dos RSS, assinale a alternativa correta sobre o grupo de resíduo:</h4>
+                    <br>
+                    <p><input type="radio" name="q1" value="1"> O grupo B refere-se a materiais que contém
+                        radionuclídeos em quantidades superiores aos limites especificados nas normas do CNEN e para os
+                        quais a reutilização é imprópria ou não prevista.</p>
+                    <p><input type="radio" name="q1" value="2"> O grupo E se refere a resíduos que não apresenta risco
+                        biológico, químico ou radiológico à saúde ou ao meio ambiente, podendo ser equiparados aos
+                        resíduos domiciliares.</p>
+                    <p><input type="radio" name="q1" value="3"> O grupo D se refere a materiais perfuro cortantes.</p>
+                    <p><input type="radio" name="q1" value="4"> O grupo A se refere a materiais com a presença de
+                        agentes biológicos, que, por suas características, podem apresentar riscos de infecção.</p>
+                    <p><input type="radio" name="q1" value="5"> O grupo C refere se a resíduos que contenham substâncias
+                        químicas que podem apresentar risco á saúde pública ou ao meio ambiente, dependendo de suas
+                        características de inflamabilidade e corrosividade.</p>
+                </div>
+
+                <div class="question">
+                    <h3>Exercício de Fixação Sobre Simbologia</h3>
+                    <h4>2. Com base na simbologia dos grupos de resíduos abaixo:</h4> <br>
+                    <p>1. <img src="../../images/extra/infectante.jpg" style="width: 100px;" alt=""> 2. <img
+                            src="../../images/extra/Caveira.jpeg" style="width: 150px;" alt=""> 3. <img
+                            src="../../images/extra/Radioativo.avif" style="width: 100px;" alt=""></p>
+                    <p>4. <img src="../../images/extra/Reciclavel.jpg" style="width: 100px;" alt=""> 5. <img
+                            src="../../images/extra/Reciclavel.jpg" style="width: 100px;" alt=""> 6. <img
+                            src="../../images/extra/infectante.jpg" style="width: 100px;" alt=""></p>
+                    <p>Identifique o símbolo acima com o grupo de resíduos:</p>
+                    <p><input type="radio" name="q2" value="a"> 1. A 2.C 3.E 4. D 5. D Reciclável 6.A</p>
+                    <p><input type="radio" name="q2" value="b"> 1. A 2.B 3.C 4. D 5. D Reciclável 6.E</p>
+                    <p><input type="radio" name="q2" value="c"> 1. B 2.E 3.C 4. D 5. D Reciclável 6.A</p>
+                </div>
+
+                <button type="button" onclick="checkAnswers()">Enviar Respostas</button>
+            </form>
+
+            <div id="results">
+                <h3>Resultados</h3>
+                <p id="result1"></p>
+                <p id="result2"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="left-col">
+                <img class="footer-logo" src="../../images/icon/logo-footer.png" alt="">
+                <p class="rights-text">Copyright © 2024.</p>
+                <p><img src="../../images/icon/phone.png"> +55 34 9280-2738</p>
+                <p><img src="../../images/icon/mail.png">&nbsp;silviavitorino2006@yahoo.com.br</p>
+            </div>
+            <div class="right-col">
+                <h1>Bem-vindos</h1>
+                <div class="border"></div>
+                <p>Aqui, aprendam sobre resíduos de saúde de forma lúdica. Contatem-nos para dúvidas. Aproveitem!</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        function checkAnswers() {
+            var correctAnswers = {
+                q1: '4',
+                q2: 'b'
+            };
+
+            var userAnswers = {
+                q1: document.querySelector('input[name="q1"]:checked')?.value,
+                q2: document.querySelector('input[name="q2"]:checked')?.value
+            };
+
+            var result1 = document.getElementById('result1');
+            var result2 = document.getElementById('result2');
+
+            if (userAnswers.q1 === correctAnswers.q1) {
+                result1.textContent = 'Questão 1: Correta';
+                result1.style.color = 'green';
+            } else {
+                result1.textContent = 'Questão 1: Errada. A resposta correta é d.';
+                result1.style.color = 'red';
+            }
+
+            if (userAnswers.q2 === correctAnswers.q2) {
+                result2.textContent = 'Questão 2: Correta';
+                result2.style.color = 'green';
+            } else {
+                result2.textContent = 'Questão 2: Errada. A resposta correta é b.';
+                result2.style.color = 'red';
+            }
+
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>

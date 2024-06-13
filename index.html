@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" type="png" href="images/icon/favicon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>doutorado em Tecnologia Ambiental</title>
+    <meta name="desciption" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <script>
+        $(window).on('scroll', function () {
+            if ($(window).scrollTop()) {
+                $('nav').addClass('black');
+            } else {
+                $('nav').removeClass('black');
+            }
+        });
+
+        $(document).ready(function () {
+            $('.menu').click(function () {
+                $('.side-menu').toggleClass('active');
+            });
+            $('.close').click(function () {
+                $('.side-menu').removeClass('active');
+            });
+
+            // Checa se a imagem de parabéns já foi exibida nesta sessão
+            if (!sessionStorage.getItem('parabensShown')) {
+                // Exibe a imagem de parabéns ao carregar a página com efeito de deslizar para cima
+                var parabensImg = $('<img>', {
+                    src: 'images/photoshop/Carlos.png',
+                    alt: '',
+                    class: 'parabens-img'
+                });
+                var parabensText1 = 'Olá, eu sou o Carlos, enfermeiro e, vim aqui explicar para vocês, que também são enfermeiros e técnicos de enfermagem, sobre os resíduos de serviços de saúde.';
+                var parabensText2 = 'Resíduos de serviços de saúde são resíduos gerados em hospitais, farmácias, funerárias, clínicas veterinárias, unidades móveis de atendimento, salões de beleza e estética.';
+                var parabensText3 = 'Mas, aqui para nós, vamos aprender sobre aqueles gerados nas unidades hospitalares.';
+                var parabensText4 = 'Sua destinação de forma inadequada pode apresentar sérios riscos à saúde da população, dos trabalhadores e pacientes de hospitais e ainda ser danoso ao meio ambiente.';
+                var parabensText5 = 'Então, venha comigo. Vamos aprender mais sobre esse assunto.';
+                var clickToContinueText = 'Clique para continuar';
+                var parabensText = $('<div>', {
+                    class: 'parabens-text',
+                    text: clickToContinueText
+                });
+                var overlay = $('<div>', {
+                    class: 'overlay'
+                });
+                $('body').append(parabensImg);
+                $('body').append(parabensText);
+                $('body').append(overlay);
+
+                // Função para trocar o texto
+                function changeText() {
+                    var currentText = $('.parabens-text').text();
+                    if (currentText === clickToContinueText) {
+                        $('.parabens-text').text(parabensText1);
+                        speakText(parabensText1);
+                    } else if (currentText === parabensText1) {
+                        $('.parabens-text').text(parabensText2);
+                        speakText(parabensText2);
+                    } else if (currentText === parabensText2) {
+                        $('.parabens-text').text(parabensText3);
+                        speakText(parabensText3);
+                    } else if (currentText === parabensText3) {
+                        $('.parabens-text').text(parabensText4);
+                        speakText(parabensText4);
+                    } else if (currentText === parabensText4) {
+                        $('.parabens-text').text(parabensText5);
+                        speakText(parabensText5);
+                    } else {
+                        $('.parabens-text, .parabens-img, .overlay').fadeOut(function () {
+                            $('body').removeClass('no-scroll');
+                            $('body > :not(.parabens-img, .parabens-text, .overlay)').removeClass('blurred');
+                            $('.parabens-img, .parabens-text, .overlay').remove();
+                        });
+                    }
+                }
+
+                // Função para ler o texto em voz alta
+                function speakText(text) {
+                    var speech = new SpeechSynthesisUtterance(text);
+                    speech.lang = 'pt-BR';
+                    speech.pitch = 1; // Ajuste do tom (0 a 2)
+                    speech.rate = 1; // Ajuste da velocidade (0.1 a 10)
+
+                    // Seleciona a primeira voz em português disponível
+                    var voices = window.speechSynthesis.getVoices();
+                    var portugueseVoice = voices.find(voice => voice.lang === 'pt-BR');
+                    if (portugueseVoice) {
+                        speech.voice = portugueseVoice;
+                    }
+
+                    window.speechSynthesis.speak(speech);
+                }
+
+                // Adiciona evento de clique na tela para mudar o texto
+                $(document).on('click', function () {
+                    changeText();
+                });
+
+                // Adiciona a classe blurred ao body exceto a imagem de parabéns, texto e overlay ao carregar a página
+                setTimeout(function () {
+                    $('body > :not(.parabens-img, .parabens-text, .overlay)').addClass('blurred');
+                    overlay.fadeIn();
+                    $('body').addClass('no-scroll');
+                }, 500);
+
+                // Marca que a imagem de parabéns já foi exibida nesta sessão
+                sessionStorage.setItem('parabensShown', 'true');
+            }
+
+            // Reverter todas as alterações de estilo após a execução do script
+            $(window).on('unload', function () {
+                $('nav').removeClass('black');
+                $('.side-menu').removeClass('active');
+                $('.parabens-img, .parabens-text, .overlay').remove();
+                $('body > :not(.parabens-img, .parabens-text, .overlay)').removeClass('blurred');
+                $('body').removeClass('no-scroll');
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const title = document.querySelector('.title');
+            const capitulos = document.querySelector('#capitulos');
+
+            function checkVisibility() {
+                const titlePosition = title.getBoundingClientRect().top;
+                const capitulosPosition = capitulos.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+
+                if (titlePosition < windowHeight) {
+                    title.classList.add('visible');
+                }
+
+                if (capitulosPosition < windowHeight) {
+                    capitulos.classList.add('visible');
+                }
+            }
+
+            window.addEventListener('scroll', checkVisibility);
+            checkVisibility(); // Verificação inicial
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <header id="header">
+        <nav>
+            <div id="logo">
+                <a href="./index.html">
+                    <img style="height: 70px;" src="images/icon/logo-Tecnología-Ambiental-01-copia.png" alt="">
+                </a>
+            </div>
+            <div class="menu">
+                <img src="images/icon/menu.png" alt="menu">
+            </div>
+            <ul>
+                <li><a class="active" href="">Home</a></li>
+                <li><a href="#capitulos">Capítulos</a></li>
+                <li><a href="pages/sobre/aboutus.html">Sobre nós</a></li>
+            </ul>
+        </nav>
+        <div class="side-menu">
+            <div class="close">
+                <img src="images/icon/close.png" alt="close">
+            </div>
+            <ul>
+                <li><a class="active" href="">Home</a></li>
+                <li><a href="#capitulos">Capítulos</a></li>
+                <li><a href="pages/sobre/aboutus.html">Sobre nós</a></li>
+            </ul>
+        </div>
+        <div class="head-container">
+            <div class="quote">
+                <p>Resíduos de Serviços de Saúde (RSS)</p>
+                <h5>Entendendo a Significância e a Definição dos RSS na Assistência Clínica e , na Segurança do Ambiente Hospitalar
+                    <br>
+                    Resolução Conama nº 358 de 2005 , RDC nº 222/2018 Anvisa e PNRS nº12305).</h5>
+                <div class="play">
+                    <img src="images/icon/play.png" alt="play"><span><a
+                            href="https://www.youtube.com/watch?si=pPnzqlBgdiYmJm0j&v=HvenET92A7I&feature=youtu.be"
+                            target="_blank">Assistir</a></span>
+                </div>
+
+                <br>
+
+                <p>O PLANO DE GERENCIAMENTO DE RSS</p>
+                <h5>O plano de gerenciamento de RSS, o PGRSS, é um documento feito nos hospitais, por uma equipe
+                    multiprofissional, nele são definidas as diretrizes e normas de gerenciamento, que devem seguir os
+                    hospitais, para fazer todo o manejo desse material, ou seja, o caminho que o resíduo percorre, desde
+                    a sua geração na fonte até a sua destinação final.
+                    Para fazer esse documento, existe uma comissão de gerenciamento de Resíduos de Serviços de Saúde,
+                    que trabalha no hospital.
+                    Aqui, o nosso objetivo principal é te ensinar a classificar cada resíduo produzido no hospital, para
+                    descartá-lo de forma correta e, de acordo com esse plano de gerenciamento, que obedece as normas,
+                    Resolução Conama nº 358 de 2005 e RDC nº 222/2018 Anvisa, PNRS nº12305).</h5>
+
+                <br>
+
+                <a href="https://antigo.anvisa.gov.br/documents/33852/271855/RDC+222+de+Mar%C3%A7o+de+2018+COMENTADA/edd85795-17a2-4e1e-99ac-df6bad1e00ce?version=1.0"
+                    style="color: blue; text-align: justify;">Normas: <br> <br>
+                    Resolução Conama n° 358/2005 <br>
+                    RDC n° 222/2018 <br>
+                    PNRS nº 12305 de 2010
+                </a>
+                <br>
+
+            </div>
+            <div class="imagem-corona">
+                <img src="images/extra/fundo-de-residuos-de-coronavirus_52683-49377.avif" alt="svg">
+            </div>
+        </div>
+    </header>
+
+    <!-- Capitulos -->
+    <div class="title">
+        <span>CAPÍTULOS</span>
+    </div>
+    <br><br>
+    <div id="capitulos" class="course">
+        <center>
+            <div class="cbox">
+                <div class="det"><a href="#"><img src="images/courses/book.png">Definição</a></div>
+                <div class="det"><a href="pages/classificacao/classificacao.html"><img
+                            src="images/courses/d1.png">Classificação</a></div>
+                <div class="det"><a href="pages/descarte/descarte.html"><img src="images/courses/paper.png">Descarte</a>
+                </div>
+                <div class="det"><a href="pages/jogos/jogos.html"><img src="images/courses/d1.png">Jogos</a></div>
+            </div>
+        </center>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="left-col">
+                <div class="logo"></div><br><br>
+                <p class="rights-text">Copyright © 2024.</p><br>
+                <p><img src="images/icon/phone.png"> +55 34 9280-2738<br><img src="images/icon/mail.png">&nbsp;
+                    silviavitorino2006@yahoo.com.br</p>
+            </div>
+            <div class="right-col">
+                <h1 style="color: #fff">Bem-vindos</h1>
+                <div class="border"></div><br>
+                <p> Aqui, aprendam sobre resíduos de saúde de forma lúdica. Contatem-nos para dúvidas. Aproveitem!</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
